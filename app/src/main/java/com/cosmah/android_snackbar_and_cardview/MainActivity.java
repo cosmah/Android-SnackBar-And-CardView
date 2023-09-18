@@ -9,16 +9,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnSnackBar;
     private ConstraintLayout parent;
+    private MaterialCardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //cardView
+        cardView = findViewById(R.id.cardView);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Card View Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         parent = findViewById(R.id.parent);
         btnSnackBar = findViewById(R.id.btnSnackBar);
